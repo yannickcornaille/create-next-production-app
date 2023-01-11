@@ -10,6 +10,7 @@
 
 # linting
 .eslintcache
+.stylelintcache
 
 # next.js
 /.next/
