@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Delete the following line if you are using Emotion
 import '../styles/globals.css';
 // Uncomment the following line if you are using Emotion
@@ -8,15 +9,22 @@ import '../styles/globals.css';
 
 // const muiTheme = createTheme(theme);
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      {/* <GlobalStyles /> */}
-      {/* <ThemeProvider theme={muiTheme}> */}
-        <Component {...pageProps} />
-      {/* </ThemeProvider> */}
-    </>
-  );
-}
+const App = ({ Component, pageProps }) => (
+  <>
+    {/* <GlobalStyles /> */}
+    {/* <ThemeProvider theme={muiTheme}> */}
+    <Component {...pageProps} />
+    {/* </ThemeProvider> */}
+  </>
+);
 
-export default MyApp
+App.propTypes = {
+  Component: PropTypes.func.isRequired,
+  pageProps: PropTypes.shape({
+    __lang: PropTypes.string,
+    // eslint-disable-next-line react/forbid-prop-types
+    __namespaces: PropTypes.object,
+  }).isRequired,
+};
+
+export default App;

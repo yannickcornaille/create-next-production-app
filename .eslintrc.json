@@ -1,3 +1,63 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "plugins": ["import"],
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["@/assets", "./public/assets"],
+        ["@", "."]
+      ]
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true,
+    "cypress/globals": true
+  },
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          ["parent", "sibling", "index"]
+        ],
+        "pathGroups": [{ "pattern": "@/**", "group": "parent" }],
+        "newlines-between": "always"
+      }
+    ],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function" }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      { "reservedFirst": true, "noSortAlphabetically": true }
+    ],
+    "react/sort-prop-types": [
+      "warn",
+      { "requiredFirst": true, "sortShapeProp": true }
+    ],
+    "react/sort-default-props": ["warn"]
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js"],
+      "extends": ["plugin:testing-library/react"]
+    },
+    {
+      "files": ["**/?(*.)+cy.js"],
+      "extends": ["plugin:cypress/recommended"]
+    }
+  ]
 }
