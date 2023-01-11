@@ -16,7 +16,8 @@
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test --expect 200 'yarn start' http://0.0.0.0:3000 'yarn cypress'",
-    "e2e:headless": "start-server-and-test --expect 200 'yarn start' http://0.0.0.0:3000 'yarn cypress:headless'"
+    "e2e:headless": "start-server-and-test --expect 200 'yarn start' http://0.0.0.0:3000 'yarn cypress:headless'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -41,8 +42,10 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-testing-library": "^5.9.1",
+    "husky": "^8.0.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.2",
     "start-server-and-test": "^1.15.2",
     "stylelint": "^14.16.1",
@@ -50,5 +53,11 @@
     "stylelint-config-recommended": "^9.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache",
+      "stylelint"
+    ]
   }
 }
