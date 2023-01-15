@@ -12,6 +12,7 @@ const GlobalStyles = () => (
         margin: 0;
         font-family: Roboto, sans-serif;
         background-color: ${theme.colors.white_fa};
+
         /* overflow-x: hidden; */
       }
 
@@ -19,6 +20,7 @@ const GlobalStyles = () => (
         box-sizing: border-box;
       }
 
+      /* stylelint-disable-next-line selector-id-pattern */
       #__next {
         width: 100%;
         height: 100%;

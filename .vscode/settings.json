@@ -3,6 +3,7 @@
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true
   },
+  "stylelint.validate": ["css", "postcss", "javascript"],
   "editor.formatOnSave": true,
   "jest.jestCommandLine": "yarn test --"
 }
