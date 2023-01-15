@@ -1,12 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=578278026)
+
+This is a production-grade [Next.js](https://nextjs.org/) starter kit bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).\
+create-next-production-app is designed to build a production-grade project using the Next.js framework.
+
+It comes with various configurations and various tools to meet very common needs and use cases with the aim of providing a ready-to-use environment.
+
+### Overview of available tools and configurations
+
+- Runtime type checking with [prop-types](https://github.com/facebook/prop-types)
+- [Module aliases](https://nextjs.org/docs/advanced-features/module-path-aliases)
+- CSS-in-JS with [Emotion](https://emotion.sh/docs/introduction)
+- [Material UI](https://mui.com/material-ui/getting-started/overview/) (MUI) React components and theme management
+- [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for unit testing
+- [Cypress](https://www.cypress.io/) for E2E and integration testing
+- JS and CSS linters and code formatter with [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/)
+- Git hooks with [Husky](https://typicode.github.io/husky/#/) and a first pre-configured pre-commit hook
+- VSCode settings and launchers (run and debug)
+- Dev container for VSCode and GitHub Codespaces
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -18,6 +34,11 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Develop using a dev container
+
+The easiest way to enjoy a fully featured development environment is to run the project locally in a container in VSCode or remotely in [GitHub Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=578278026).\
+Check out the [documentation](https://docs.github.com/en/codespaces) for more details.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -27,8 +48,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can also check out [the create-next-production-app GitHub repository](https://github.com/yannickcornaille/create-next-production-app) - your feedback and contributions are also welcome!
