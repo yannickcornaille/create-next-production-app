@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { appWithTranslation } from 'next-i18next';
 // Delete the following line if you are using Emotion
 import '../styles/globals.css';
 // Uncomment the following line if you are using Emotion
@@ -27,4 +28,4 @@ App.propTypes = {
   }).isRequired,
 };
 
-export default App;
+export default appWithTranslation(App);
