@@ -1,6 +1,12 @@
 import { css, Global } from '@emotion/react';
+import { Roboto } from 'next/font/google';
 
 import theme from '@/utils/theme';
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+});
 
 const GlobalStyles = () => (
   <Global
@@ -10,7 +16,7 @@ const GlobalStyles = () => (
         height: 100vh;
         padding: 0;
         margin: 0;
-        font-family: Roboto, sans-serif;
+        font-family: ${roboto.style.fontFamily}, sans-serif;
         background-color: ${theme.colors.white_fa};
 
         /* overflow-x: hidden; */
