@@ -12,7 +12,6 @@ const theme = {
     primary: { main: '#000' },
     secondary: { main: '#fff' },
   },
-  // typography: { fontFamily: 'Roboto, sans-serif' },
   // cssClasses: {},
 };
 
