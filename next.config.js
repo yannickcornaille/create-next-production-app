@@ -14,6 +14,7 @@ const nextConfig = {
   },
   eslint: {
     dirs: [
+      '__stories__',
       '__tests__',
       'components',
       'contexts',

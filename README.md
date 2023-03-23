@@ -17,6 +17,7 @@ It comes with various configurations and various tools to meet very common needs
 - Git hooks with [Husky](https://typicode.github.io/husky/#/) and a first pre-configured pre-commit hook
 - Internationalization with [next-i18next](https://github.com/i18next/next-i18next)
 - PWA ready with [next-pwa](https://github.com/shadowwalker/next-pwa)
+- [Storybook](https://storybook.js.org/) for developing, testing and documenting in isolation
 - VSCode settings and launchers (run and debug)
 - Dev container for VSCode and GitHub Codespaces
 
