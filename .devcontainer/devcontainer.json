@@ -34,11 +34,15 @@
       ]
     },
     "codespaces": {
-      "openFiles": ["pages/_app.js", "pages/index.js"]
+      "openFiles": ["pages/index.js"]
     }
   },
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
-  "remoteUser": "node"
+  "remoteUser": "node",
+
+  "containerEnv": {
+    "HUSKY": "0"
+  }
 }

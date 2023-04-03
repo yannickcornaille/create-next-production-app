@@ -10,3 +10,67 @@ body {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #42a5f5;
+  --secondary-color: #ba68c8;
+  --error-color: #ef5350;
+  --warning-color: #ff9800;
+  --info-color: #03a9f4;
+  --success-color: #4caf50;
+}
+
+:root .dark {
+  --primary-color: #1565c0;
+  --secondary-color: #7b1fa2;
+  --error-color: #c62828;
+  --warning-color: #e65100;
+  --info-color: #01579b;
+  --success-color: #1b5e20;
+}
+
+.home {
+  padding: 1rem;
+  text-align: center;
+}
+
+.home.dark {
+  background-color: #666;
+  color: #fff;
+}
+
+button:not(form *, .toggle-theme) {
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  color: inherit;
+}
+
+button.selected {
+  background-color: var(--secondary-color);
+}
+
+button[disabled] {
+  cursor: auto;
+  background-color: var(--warning-color);
+  font-weight: 600;
+}
+
+fieldset {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-theme {
+  position: absolute;
+  right: 1rem;
+}

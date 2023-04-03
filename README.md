@@ -1,4 +1,4 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=578278026)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=decision-support-system&repo=578278026)
 
 This is a production-grade [Next.js](https://nextjs.org/) starter kit bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).\
 create-next-production-app is designed to build a production-grade project using the Next.js framework.
@@ -39,7 +39,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Develop using a dev container
 
-The easiest way to enjoy a fully featured development environment is to run the project locally in a container in VSCode or remotely in [GitHub Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=578278026).\
+The easiest way to enjoy a fully featured development environment is to run the project locally in a container in VSCode or remotely in [GitHub Codespaces](https://github.com/codespaces/new?hide_repo_select=true&ref=decision-support-system&repo=578278026).\
 Check out the [documentation](https://docs.github.com/en/codespaces) for more details.
 
 ## Learn More
