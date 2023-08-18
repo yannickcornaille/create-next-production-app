@@ -5,7 +5,7 @@
       "name": "Next.js: debug server-side",
       "type": "node-terminal",
       "request": "launch",
-      "command": "yarn dev"
+      "command": "npm run dev"
     },
     {
       "name": "Next.js: debug client-side",
@@ -17,7 +17,7 @@
       "name": "Next.js: debug full stack",
       "type": "node-terminal",
       "request": "launch",
-      "command": "yarn dev",
+      "command": "npm run dev",
       "serverReadyAction": {
         "pattern": "started server on .+, url: (https?://.+)",
         "uriFormat": "%s",
@@ -28,7 +28,7 @@
       "name": "Storybook debug",
       "type": "node-terminal",
       "request": "launch",
-      "command": "yarn storybook"
+      "command": "npm run storybook"
     }
   ]
 }

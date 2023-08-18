@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
+import { render } from '@/utils/testUtils';
 import Example from '@/components/Example';
 
 describe('Example', () => {

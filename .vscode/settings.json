@@ -5,5 +5,5 @@
   },
   "stylelint.validate": ["css", "postcss", "javascript"],
   "editor.formatOnSave": true,
-  "jest.jestCommandLine": "yarn test --"
+  "jest.jestCommandLine": "npm run test --"
 }
