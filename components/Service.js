@@ -1,12 +1,20 @@
-const Service = () => {
+import PropTypes from 'prop-types';
+
+const Service = ({ name, price = 0 }) => {
   const handleClick = () => {
     console.log('CLICK !!!');
   };
   return (
     <button onClick={handleClick}>
-      <span>Ergonomie</span>
-      <span>5000</span>
+      <span>{name}</span>
+      <span>{price}</span>
     </button>
   );
 };
+
+Service.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number,
+};
+
 export default Service;
