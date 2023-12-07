@@ -3,10 +3,11 @@ import { useState } from 'react';
 
 import Title from '@/components/Title';
 import Service from '@/components/Service';
-import servicesData from '@/assets/servicesData';
+import ServiceForm from '@/components/ServiceForm';
+// import servicesData from '@/assets/servicesData';
 
 const Home = () => {
-  const [services, setServices] = useState(servicesData);
+  const [services, setServices] = useState([]);
   const handleServiceClick = (id) => {
     setServices(
       services.map((service) => {
@@ -16,6 +17,18 @@ const Home = () => {
         return service;
       })
     );
+  };
+
+  const handleServiceSubmit = (name, price) => {
+    setServices([
+      ...services,
+      {
+        id: services.length + 1,
+        name,
+        price,
+        selected: false,
+      },
+    ]);
   };
 
   const total = services.reduce((accumulator, service) => {
@@ -28,6 +41,7 @@ const Home = () => {
   return (
     <div className="home">
       <Title />
+      <ServiceForm onSubmit={handleServiceSubmit} />
       {/* {servicesData.map((service) => (
       <Service key={service.id} name={service.name} price={service.price} />
     ))} */}
@@ -38,10 +52,12 @@ const Home = () => {
           onServiceClick={handleServiceClick}
         />
       ))}
-      <button disabled>
-        <span>Total</span>
-        <span>{total}</span>
-      </button>
+      {!!services.length && (
+        <button disabled>
+          <span>Total</span>
+          <span>{total}</span>
+        </button>
+      )}
     </div>
   );
 };
