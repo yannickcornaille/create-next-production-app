@@ -1,5 +1,5 @@
 // import '../styles/Home.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Title from '@/components/Title';
 import Service from '@/components/Service';
@@ -7,7 +7,20 @@ import ServiceForm from '@/components/ServiceForm';
 // import servicesData from '@/assets/servicesData';
 
 const Home = () => {
+  const [isStorageSynchronized, setIsStorageSynchronized] = useState(false);
   const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    setServices(JSON.parse(localStorage.getItem('services')) ?? []);
+    setIsStorageSynchronized(true);
+  }, []);
+
+  useEffect(() => {
+    if (isStorageSynchronized) {
+      localStorage.setItem('services', JSON.stringify(services));
+    }
+  }, [isStorageSynchronized, services]);
+
   const handleServiceClick = (id) => {
     setServices(
       services.map((service) => {
