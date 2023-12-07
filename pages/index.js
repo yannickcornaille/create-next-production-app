@@ -1,12 +1,14 @@
 // import '../styles/Home.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import Title from '@/components/Title';
 import Service from '@/components/Service';
 import ServiceForm from '@/components/ServiceForm';
+import ColorModeContext from '@/contexts/ColorModeContext';
 // import servicesData from '@/assets/servicesData';
 
 const Home = () => {
+  const [colorMode, toggleColorMode] = useContext(ColorModeContext);
   const [isStorageSynchronized, setIsStorageSynchronized] = useState(false);
   const [services, setServices] = useState([]);
 
@@ -52,7 +54,10 @@ const Home = () => {
   }, 0);
 
   return (
-    <div className="home">
+    <div className={`home ${colorMode}`}>
+      <button type="button" className="toggle-theme" onClick={toggleColorMode}>
+        Light/Dark
+      </button>
       <Title />
       <ServiceForm onSubmit={handleServiceSubmit} />
       {/* {servicesData.map((service) => (
