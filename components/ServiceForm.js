@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, memo } from 'react';
 import { PropTypes } from 'prop-types';
 
 const ServiceForm = ({ onSubmit = () => {} }) => {
@@ -58,4 +58,4 @@ ServiceForm.propTypes = {
   onSubmit: PropTypes.func,
 };
 
-export default ServiceForm;
+export default memo(ServiceForm);

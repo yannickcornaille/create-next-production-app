@@ -1,5 +1,5 @@
 // import '../styles/Home.module.css';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
 
 import Title from '@/components/Title';
 import Service from '@/components/Service';
@@ -34,17 +34,17 @@ const Home = () => {
     );
   };
 
-  const handleServiceSubmit = (name, price) => {
-    setServices([
-      ...services,
+  const handleServiceSubmit = useCallback((name, price) => {
+    setServices((currentServices) => [
+      ...currentServices,
       {
-        id: services.length + 1,
+        id: currentServices.length + 1,
         name,
         price,
         selected: false,
       },
     ]);
-  };
+  }, []);
 
   const total = services.reduce((accumulator, service) => {
     if (service.selected) {
