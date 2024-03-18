@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import { render } from '@/utils/testUtils';
 import Example from '@/components/Example';
+import { render } from '@/utils/testUtils';
 
 describe('Example', () => {
   it('renders a heading', () => {

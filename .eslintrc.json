@@ -12,7 +12,7 @@
     "import/resolver": {
       "alias": [
         ["@/assets", "./public/assets"],
-        ["@", "."]
+        ["@", "./src/"]
       ]
     }
   },

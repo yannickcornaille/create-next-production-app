@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 
 import { render } from '@/utils/testUtils';
-import Home from '@/pages/index';
+import Page from '../app/page';
 
-describe('Home', () => {
+describe('Home page', () => {
   it('renders a heading', () => {
-    render(<Home />);
+    render(<Page />);
 
     const heading = screen.getByRole('heading', {
       name: /welcome to production-grade next\.js starter kit!/i,

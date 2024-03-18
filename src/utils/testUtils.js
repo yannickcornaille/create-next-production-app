@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { render } from '@testing-library/react';
 import { appWithTranslation } from 'next-i18next';
 // Delete the following line if you are using Emotion
-import '../styles/globals.css';
+import '../app/globals.css';
 // Uncomment the following line if you are using Emotion
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import GlobalStyles from '@/utils/GlobalStyles';

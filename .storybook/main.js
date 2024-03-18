@@ -1,10 +1,12 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
+import path from 'path';
+
 const config = {
   stories: [
-    '../__stories__/**/*.mdx',
-    '../__stories__/**/*.stories.js',
+    '../src/__stories__/**/*.mdx',
+    '../src/__stories__/**/*.stories.js',
     {
-      directory: '../components',
+      directory: '../src/components',
       titlePrefix: 'Next.js Components',
       files: '**/*.stories.*',
     },
@@ -22,7 +24,11 @@ const config = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: {
+      builder: {
+        useSWC: true,
+      },
+    },
   },
   core: {
     disableTelemetry: true,
@@ -32,7 +38,7 @@ const config = {
   },
   staticDirs: ['../public'],
   webpackFinal: async (config) => {
-    config.resolve.fallback.fs = false;
+    config.resolve.alias['@'] = path.resolve(__dirname, '../src');
     return config;
   },
 };

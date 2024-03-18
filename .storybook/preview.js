@@ -1,6 +1,6 @@
 import i18n from './i18next.js';
 // Delete the following line if you are using Emotion
-import '../styles/globals.css';
+import '../src/app/globals.css';
 // Uncomment the following line if you are using Emotion
 // import GlobalStyles from '@/utils/GlobalStyles';
 // Uncomment the following lines if you are using MUI

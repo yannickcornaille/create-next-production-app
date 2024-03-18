@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert(1);
+  }
+}
+
 .footer {
   display: flex;
   flex: 1;
