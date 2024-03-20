@@ -29,8 +29,7 @@
         "dbaeumer.vscode-eslint",
         "Orta.vscode-jest",
         "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
-        "styled-components.vscode-styled-components"
+        "stylelint.vscode-stylelint"
       ]
     },
     "codespaces": {

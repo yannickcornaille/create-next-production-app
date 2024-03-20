@@ -1,14 +1,6 @@
 import PropTypes from 'prop-types';
 
-// Delete the following line if you are using Emotion
 import './globals.css';
-// Uncomment the following line if you are using Emotion
-// import GlobalStyles from '@/utils/GlobalStyles';
-// Uncomment the following lines if you are using MUI
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import theme from '@/utils/theme';
-
-// const muiTheme = createTheme(theme);
 
 export const metadata = {
   metadataBase: new URL('https://create-next-production-app.com'),

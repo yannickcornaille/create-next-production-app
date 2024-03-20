@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-// Delete the following line if you are using Emotion
 import styles from './page.module.css';
 import nextJsLogo from '@/assets/next.svg';
 

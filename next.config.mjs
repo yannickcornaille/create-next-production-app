@@ -10,9 +10,6 @@ const withPWA = nextPWA({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // i18n,
-  compiler: {
-    emotion: true,
-  },
 };
 
 export default withPWA(nextConfig);

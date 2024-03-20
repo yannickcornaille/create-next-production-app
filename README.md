@@ -9,8 +9,6 @@ It comes with various configurations and various tools to meet very common needs
 
 - Runtime type checking with [prop-types](https://github.com/facebook/prop-types)
 - [Module aliases](https://nextjs.org/docs/advanced-features/module-path-aliases)
-- CSS-in-JS with [Emotion](https://emotion.sh/docs/introduction)
-- [Material UI](https://mui.com/material-ui/getting-started/overview/) (MUI) React components and theme management
 - [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for unit testing
 - [Cypress](https://www.cypress.io/) for E2E and integration testing
 - JS and CSS linters and code formatter with [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/)

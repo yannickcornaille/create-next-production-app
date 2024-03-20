@@ -1,7 +1,7 @@
 {
   "extends": ["stylelint-config-standard"],
-  "customSyntax": "postcss-styled-syntax",
   "rules": {
     "declaration-property-value-no-unknown": true
-  }
+  },
+  "allowEmptyInput": true
 }
