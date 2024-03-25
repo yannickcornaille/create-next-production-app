@@ -29,7 +29,8 @@
         "dbaeumer.vscode-eslint",
         "Orta.vscode-jest",
         "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint"
+        "stylelint.vscode-stylelint",
+        "lokalise.i18n-ally"
       ]
     },
     "codespaces": {

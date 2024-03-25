@@ -1,12 +1,13 @@
-import { Trans } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 
 const Example = () => {
+  const t = useTranslations();
+
   return (
     <h1>
-      <Trans i18nKey="home.welcome">
-        Welcome to production-grade <a href="https://nextjs.org">Next.js</a>{' '}
-        starter kit!
-      </Trans>
+      {t.rich('home.welcome', {
+        link: (chunks) => <a href="https://nextjs.org">{chunks}</a>,
+      })}
     </h1>
   );
 };

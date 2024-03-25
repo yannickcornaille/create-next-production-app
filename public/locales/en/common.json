@@ -1,7 +1,0 @@
-{
-  "home": {
-    "welcome": "Welcome to production-grade <1>Next.js</1> starter kit!",
-    "start": "Get started by editing <1>pages/index.js</1>"
-  },
-  "footer": "Powered by Next.js with the contribution of Yannick Cornaille"
-}

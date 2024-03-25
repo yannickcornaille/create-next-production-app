@@ -1,7 +1,0 @@
-{
-  "home": {
-    "welcome": "Bienvenue dans le kit de démarrage prêt pour la production <1>Next.js</1>!",
-    "start": "Commencez par modifier <1>pages/index.js</1>"
-  },
-  "footer": "Propulsé par Next.js avec la contribution de Yannick Cornaille"
-}

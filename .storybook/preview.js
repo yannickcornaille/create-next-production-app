@@ -1,13 +1,21 @@
-import i18n from './i18next.js';
-import '../src/app/globals.css';
+import { NextIntlClientProvider } from 'next-intl';
+
+import '../src/app/[locale]/globals.css';
+import { defaultLocale } from '@/utils/locales';
+import messages from '@/locales/en.json';
+
+const nextIntlConfig = {
+  locale: defaultLocale,
+  messages,
+};
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   decorators: [
     (Story) => (
-      <>
+      <NextIntlClientProvider {...nextIntlConfig}>
         <Story />
-      </>
+      </NextIntlClientProvider>
     ),
   ],
   parameters: {
@@ -18,8 +26,7 @@ const preview = {
         date: /Date$/,
       },
     },
-    i18n,
-    locale: 'en',
+    locale: defaultLocale,
     locales: {
       en: { title: 'English', left: '🇺🇸' },
       fr: { title: 'Français', left: '🇫🇷' },

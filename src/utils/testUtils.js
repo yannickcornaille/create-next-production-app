@@ -1,30 +1,44 @@
 import PropTypes from 'prop-types';
+import { cloneElement } from 'react';
 import { render } from '@testing-library/react';
-import { appWithTranslation } from 'next-i18next';
+import { NextIntlClientProvider } from 'next-intl';
 
-import '../app/globals.css';
+import '../app/[locale]/globals.css';
+import { defaultLocale } from '@/utils/locales';
+import messages from '@/locales/en.json';
 
-const AllTheProviders = ({ children }) => {
-  return <>{children}</>;
+const nextIntlConfig = {
+  locale: defaultLocale,
+  messages,
 };
 
-const nextI18NextConfig = {
-  i18n: {
-    // defaultLocale: 'cimode', // 'cimode' will cause the t function to always return the key
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+const AllTheProviders = ({ children }) => {
+  const clonedChildren = cloneElement(children, {
+    params: { locale: nextIntlConfig.locale },
+  });
+
+  return (
+    <NextIntlClientProvider {...nextIntlConfig}>
+      {clonedChildren}
+    </NextIntlClientProvider>
+  );
 };
 
 const customRender = (ui, options) =>
   render(ui, {
-    wrapper: appWithTranslation(AllTheProviders, nextI18NextConfig),
+    wrapper: AllTheProviders,
     ...options,
   });
 
 AllTheProviders.propTypes = {
   children: PropTypes.element.isRequired,
 };
+
+// To test a Next.js page component, you have to mock the next-intl `unstable_setRequestLocale` function.
+jest.mock('next-intl/server', () => ({
+  ...jest.requireActual('next-intl/server'),
+  unstable_setRequestLocale: () => ({ locale: defaultLocale }),
+}));
 
 // Re-export everything
 export * from '@testing-library/react';

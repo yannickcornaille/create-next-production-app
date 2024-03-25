@@ -1,15 +1,14 @@
 import nextPWA from 'next-pwa';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const withPWA = nextPWA({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',
 });
 
-// const { i18n } = require('./next-i18next.config.js');
+const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // i18n,
-};
+const nextConfig = {};
 
-export default withPWA(nextConfig);
+export default withPWA(withNextIntl(nextConfig));

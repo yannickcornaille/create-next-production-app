@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
 import { render } from '@/utils/testUtils';
-import Page from '../app/page';
+import Page from '../app/[locale]/page';
 
 describe('Home page', () => {
   it('renders a heading', () => {

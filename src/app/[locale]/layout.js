@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 import './globals.css';
+import { locales } from '@/utils/locales';
 
 export const metadata = {
   metadataBase: new URL('https://create-next-production-app.com'),
@@ -53,9 +55,15 @@ export const viewport = {
   colorScheme: 'dark light',
 };
 
-const RootLayout = ({ children }) => {
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+const RootLayout = ({ children, params: { locale } }) => {
+  unstable_setRequestLocale(locale);
+
   return (
-    <html lang="fr">
+    <html lang={locale}>
       <body>{children}</body>
     </html>
   );
@@ -63,6 +71,9 @@ const RootLayout = ({ children }) => {
 
 RootLayout.propTypes = {
   children: PropTypes.node,
+  params: PropTypes.shape({
+    locale: PropTypes.string,
+  }),
 };
 
 export default RootLayout;

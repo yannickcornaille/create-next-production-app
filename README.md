@@ -13,7 +13,7 @@ It comes with various configurations and various tools to meet very common needs
 - [Cypress](https://www.cypress.io/) for E2E and integration testing
 - JS and CSS linters and code formatter with [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/)
 - Git hooks with [Husky](https://typicode.github.io/husky/#/) and a first pre-configured pre-commit hook
-- Internationalization with [next-i18next](https://github.com/i18next/next-i18next)
+- Internationalization with [next-intl](https://next-intl-docs.vercel.app/)
 - PWA ready with [next-pwa](https://github.com/shadowwalker/next-pwa)
 - [Storybook](https://storybook.js.org/) for developing, testing and documenting in isolation
 - VSCode settings and launchers (run and debug)

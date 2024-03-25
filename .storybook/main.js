@@ -16,11 +16,6 @@ const config = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    /**
-     * Work in progress for Storybook v7 support
-     * https://github.com/stevensacks/storybook-react-i18next/pull/17
-     */
-    // 'storybook-react-i18next',
   ],
   framework: {
     name: '@storybook/nextjs',
