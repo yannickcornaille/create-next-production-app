@@ -13,7 +13,10 @@ const config = {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: { backgrounds: false },
+    },
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
   ],

@@ -12,10 +12,8 @@
   align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert(1);
-  }
+[data-theme='dark'] .logo {
+  filter: invert(1);
 }
 
 .footer {

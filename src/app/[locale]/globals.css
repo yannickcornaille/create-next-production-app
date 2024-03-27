@@ -1,13 +1,12 @@
-:root {
+:root,
+:root[data-theme='dark'] {
   --foreground-color: #fafafa;
   --background-color: #0a0a0a;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground-color: #0a0a0a;
-    --background-color: #fafafa;
-  }
+:root[data-theme='light'] {
+  --foreground-color: #0a0a0a;
+  --background-color: #fafafa;
 }
 
 html,
@@ -16,6 +15,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
+  color: var(--foreground-color);
   background-color: var(--background-color);
 }
 

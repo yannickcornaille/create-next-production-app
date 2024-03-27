@@ -1,23 +1,56 @@
 import { NextIntlClientProvider } from 'next-intl';
 
 import '../src/app/[locale]/globals.css';
-import { defaultLocale } from '@/utils/locales';
-import messages from '@/locales/en.json';
+import { locales, defaultLocale } from '@/utils/locales';
 
-const nextIntlConfig = {
-  locale: defaultLocale,
-  messages,
-};
+const messages = locales.reduce(
+  (acc, locale) => ({
+    ...acc,
+    [locale]: require(`@/locales/${locale}.json`),
+  }),
+  {}
+);
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   decorators: [
-    (Story) => (
-      <NextIntlClientProvider {...nextIntlConfig}>
-        <Story />
-      </NextIntlClientProvider>
-    ),
+    (Story, context) => {
+      const locale = context.globals.locale;
+      const theme = context.globals.theme;
+      document.documentElement.setAttribute('lang', locale);
+      document.documentElement.setAttribute('data-theme', theme);
+      return (
+        <NextIntlClientProvider locale={locale} messages={messages[locale]}>
+          <Story />
+        </NextIntlClientProvider>
+      );
+    },
   ],
+  globalTypes: {
+    locale: {
+      description: 'Internationalization locale',
+      defaultValue: defaultLocale,
+      toolbar: {
+        icon: 'globe',
+        items: [
+          { value: 'en', right: '🇺🇸', title: 'English' },
+          { value: 'fr', right: '🇫🇷', title: 'Français' },
+        ],
+      },
+    },
+    theme: {
+      description: 'Dark/Light color modes',
+      defaultValue: 'dark',
+      toolbar: {
+        icon: 'mirror',
+        items: [
+          { value: 'dark', right: '☾', title: 'Dark mode' },
+          { value: 'light', right: '☀', title: 'Light mode' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -26,10 +59,8 @@ const preview = {
         date: /Date$/,
       },
     },
-    locale: defaultLocale,
-    locales: {
-      en: { title: 'English', left: '🇺🇸' },
-      fr: { title: 'Français', left: '🇫🇷' },
+    nextjs: {
+      appDirectory: true,
     },
   },
 };
