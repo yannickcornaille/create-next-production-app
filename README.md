@@ -16,7 +16,7 @@ It comes with various configurations and various tools to meet very common needs
 - Internationalization with [next-intl](https://next-intl-docs.vercel.app/)
 - PWA ready with [next-pwa](https://github.com/shadowwalker/next-pwa)
 - [Storybook](https://storybook.js.org/) for developing, testing and documenting in isolation
-- VSCode settings and launchers (run and debug)
+- VSCode settings, launchers (run and debug) and task to create a new React component (open the Command Palette (⇧⌘P or Ctrl+Shift+P), run the Tasks: Run Task command and run Create a React component command)
 - Dev container for VSCode and GitHub Codespaces
 
 ## Getting Started
