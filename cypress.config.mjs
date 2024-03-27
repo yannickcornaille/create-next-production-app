@@ -1,6 +1,6 @@
-const { defineConfig } = require('cypress');
+import { defineConfig } from 'cypress';
 
-module.exports = defineConfig({
+const config = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
     // eslint-disable-next-line no-unused-vars
@@ -11,3 +11,5 @@ module.exports = defineConfig({
     specPattern: 'src/cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
   },
 });
+
+export default config;
