@@ -9,6 +9,9 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  collectCoverage: true,
+  coverageDirectory: './coverage/',
+  coverageProvider: 'v8',
   testEnvironment: 'jsdom',
 };
 
