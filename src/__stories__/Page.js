@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React from 'react';
 
-import Header from './Header';
+import { Header } from './Header';
 import './page.css';
 
-const Page = () => {
-  const [user, setUser] = useState();
+export const Page = () => {
+  const [user, setUser] = React.useState();
 
   return (
     <article>
@@ -14,8 +14,7 @@ const Page = () => {
         onLogout={() => setUser(undefined)}
         onCreateAccount={() => setUser({ name: 'Jane Doe' })}
       />
-
-      <section>
+      <section className="storybook-page">
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{' '}
@@ -85,5 +84,3 @@ const Page = () => {
     </article>
   );
 };
-
-export default Page;

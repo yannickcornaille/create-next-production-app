@@ -1,17 +1,10 @@
 import PropTypes from 'prop-types';
-
 import './button.css';
 
 /**
  * Primary UI component for user interaction
  */
-const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor = null,
-  label,
-  ...props
-}) => {
+export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const mode = primary
     ? 'storybook-button-primary'
     : 'storybook-button-secondary';
@@ -21,10 +14,14 @@ const Button = ({
       className={['storybook-button', `storybook-button-${size}`, mode].join(
         ' '
       )}
-      style={{ backgroundColor }}
       {...props}
     >
       {label}
+      <style>{`
+        button {
+          background-color: ${backgroundColor};
+        }
+      `}</style>
     </button>
   );
 };
@@ -42,6 +39,7 @@ Button.propTypes = {
    * Optional click handler
    */
   onClick: PropTypes.func,
+
   /**
    * Is this the principal call to action on the page?
    */
@@ -52,4 +50,9 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-export default Button;
+Button.defaultProps = {
+  backgroundColor: null,
+  onClick: undefined,
+  primary: false,
+  size: 'medium',
+};

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-import Button from './Button';
+import { Button } from './Button';
 import './header.css';
 
-const Header = ({ user = null, onLogin, onLogout, onCreateAccount }) => (
+export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
-    <div className="wrapper">
+    <div className="storybook-header">
       <div>
         <svg
           width="32"
@@ -63,4 +63,6 @@ Header.propTypes = {
   }),
 };
 
-export default Header;
+Header.defaultProps = {
+  user: null,
+};
