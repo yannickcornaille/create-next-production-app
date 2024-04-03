@@ -4,7 +4,7 @@ import path from 'path';
 const config = {
   stories: [
     '../src/__stories__/**/*.mdx',
-    '../src/__stories__/**/*.stories.js',
+    '../src/__stories__/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     {
       directory: '../src/components',
       titlePrefix: 'Next.js Components',

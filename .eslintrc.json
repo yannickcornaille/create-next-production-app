@@ -52,15 +52,18 @@
   },
   "overrides": [
     {
-      "files": ["**/__tests__/**/*.js", "**/?(*.)+(spec|test).js"],
+      "files": [
+        "**/__tests__/**/*.@(js|ts|tsx)",
+        "**/?(*.)+(spec|test).@(js|ts|tsx)"
+      ],
       "extends": ["plugin:testing-library/react"]
     },
     {
-      "files": ["*.stories.js"],
+      "files": ["*.stories.@(js|ts|tsx)"],
       "extends": ["plugin:storybook/recommended"]
     },
     {
-      "files": ["**/?(*.)+cy.js"],
+      "files": ["**/?(*.)+cy.@(js|ts)"],
       "extends": ["plugin:cypress/recommended"]
     }
   ]
