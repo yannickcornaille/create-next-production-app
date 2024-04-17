@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
+import type { Metadata, Viewport } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import './globals.css';
 import { locales } from '@/utils/locales';
 
-export const metadata = {
+type Props = {
+  children: ReactNode;
+  params: { locale: string };
+};
+
+export const metadata: Metadata = {
   metadataBase: new URL('https://create-next-production-app.com'),
   title: {
     default: 'Create Next Production App',
@@ -47,7 +53,7 @@ export const metadata = {
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   minimumScale: 1,
@@ -59,7 +65,7 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-const RootLayout = ({ children, params: { locale } }) => {
+const RootLayout = ({ children, params: { locale } }: Props) => {
   unstable_setRequestLocale(locale);
 
   return (
@@ -67,13 +73,6 @@ const RootLayout = ({ children, params: { locale } }) => {
       <body>{children}</body>
     </html>
   );
-};
-
-RootLayout.propTypes = {
-  children: PropTypes.node,
-  params: PropTypes.shape({
-    locale: PropTypes.string,
-  }),
 };
 
 export default RootLayout;

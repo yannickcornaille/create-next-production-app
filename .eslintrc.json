@@ -35,7 +35,6 @@
         "newlines-between": "always"
       }
     ],
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/function-component-definition": [
       "error",
       { "namedComponents": "arrow-function" }
@@ -47,8 +46,7 @@
     "react/sort-prop-types": [
       "warn",
       { "requiredFirst": true, "sortShapeProp": true }
-    ],
-    "react/sort-default-props": ["warn"]
+    ]
   },
   "overrides": [
     {

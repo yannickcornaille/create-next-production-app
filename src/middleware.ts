@@ -1,4 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest } from 'next/server';
 
 import { locales, defaultLocale } from '@/utils/locales';
 
@@ -7,7 +8,7 @@ const intlMiddleware = createMiddleware({
   defaultLocale,
 });
 
-export default function middleware(request) {
+export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const shouldHandle =

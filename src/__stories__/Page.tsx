@@ -1,10 +1,14 @@
-import React from 'react';
+import { FC, useState } from 'react';
 
 import { Header } from './Header';
 import './page.css';
 
-export const Page = () => {
-  const [user, setUser] = React.useState();
+type User = {
+  name: string;
+};
+
+export const Page: FC = () => {
+  const [user, setUser] = useState<User>();
 
   return (
     <article>
@@ -14,6 +18,7 @@ export const Page = () => {
         onLogout={() => setUser(undefined)}
         onCreateAccount={() => setUser({ name: 'Jane Doe' })}
       />
+
       <section className="storybook-page">
         <h2>Pages in Storybook</h2>
         <p>

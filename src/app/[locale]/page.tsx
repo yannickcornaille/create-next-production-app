@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -6,7 +5,11 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import nextJsLogo from '@/assets/next.svg';
 
-const Page = ({ params: { locale } }) => {
+type Props = {
+  params: { locale: string };
+};
+
+const Page = ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
 
@@ -35,12 +38,6 @@ const Page = ({ params: { locale } }) => {
       <footer className={styles.footer}>{t('footer')}</footer>
     </div>
   );
-};
-
-Page.propTypes = {
-  params: PropTypes.shape({
-    locale: PropTypes.string,
-  }),
 };
 
 export default Page;

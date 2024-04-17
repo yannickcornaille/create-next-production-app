@@ -34,7 +34,7 @@
       ]
     },
     "codespaces": {
-      "openFiles": ["src/app/layout.js", "src/app/page.js"]
+      "openFiles": ["src/app/layout.tsx", "src/app/page.tsx"]
     }
   },
 
