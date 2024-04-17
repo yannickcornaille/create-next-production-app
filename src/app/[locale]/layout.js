@@ -40,10 +40,10 @@ export const metadata = {
       { url: '/icons/167x167.png', sizes: '167x167', type: 'image/png' },
       { url: '/icons/180x180.png', sizes: '180x180', type: 'image/png' },
     ],
-    appleWebApp: {
-      title: 'Next.js PWA',
-      statusBarStyle: 'default',
-    },
+  },
+  appleWebApp: {
+    title: 'Next.js PWA',
+    statusBarStyle: 'default',
   },
 };
 
