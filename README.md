@@ -5,6 +5,8 @@ create-next-production-app is designed to build a production-grade project using
 
 It comes with various configurations and various tools to meet very common needs and use cases with the aim of providing a ready-to-use environment.
 
+A TypeScript version of this starter kit is also available on the [typescript branch](https://github.com/yannickcornaille/create-next-production-app/tree/typescript).
+
 ### Overview of available tools and configurations
 
 - Runtime type checking with [prop-types](https://github.com/facebook/prop-types)
