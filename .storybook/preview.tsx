@@ -1,3 +1,4 @@
+import { Preview } from '@storybook/react';
 import { NextIntlClientProvider } from 'next-intl';
 
 import '../src/app/[locale]/globals.css';
@@ -11,8 +12,7 @@ const messages = locales.reduce(
   {}
 );
 
-/** @type { import('@storybook/react').Preview } */
-const preview = {
+const preview: Preview = {
   decorators: [
     (Story, context) => {
       const locale = context.globals.locale;

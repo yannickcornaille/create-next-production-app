@@ -5,11 +5,11 @@ create-next-production-app is designed to build a production-grade project using
 
 It comes with various configurations and various tools to meet very common needs and use cases with the aim of providing a ready-to-use environment.
 
-A TypeScript version of this starter kit is also available on the [typescript branch](https://github.com/yannickcornaille/create-next-production-app/tree/typescript).
+A JavaScript version of this starter kit is also available on the [default branch](https://github.com/yannickcornaille/create-next-production-app).
 
 ### Overview of available tools and configurations
 
-- Runtime type checking with [prop-types](https://github.com/facebook/prop-types)
+- Type checking with TypeScript
 - [Module aliases](https://nextjs.org/docs/advanced-features/module-path-aliases)
 - [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for unit testing
 - [Cypress](https://www.cypress.io/) for E2E and integration testing

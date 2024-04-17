@@ -24,19 +24,18 @@ const getTemplate = (type, componentName) => {
   switch (type.description) {
     case 'index':
       return [
-        'index.js',
+        'index.ts',
         `export { default } from './${componentName}';
 `,
       ];
     case 'component':
       return [
-        `${componentName}.js`,
-        `import PropTypes from 'prop-types';
-import { useTranslations } from 'next-intl';
+        `${componentName}.tsx`,
+        `import { useTranslations } from 'next-intl';
 
-const propTypes = {};
+type Props = {};
 
-const ${componentName} = () => {
+const ${componentName} = (props: Props) => {
   const t = useTranslations();
   
   return (
@@ -44,14 +43,12 @@ const ${componentName} = () => {
   );
 };
 
-${componentName}.propTypes = propTypes;
-
 export default ${componentName};
 `,
       ];
     case 'test':
       return [
-        `${componentName}.test.js`,
+        `${componentName}.test.tsx`,
         `import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -68,16 +65,20 @@ describe('${componentName}', () => {
       ];
     case 'stories':
       return [
-        `${componentName}.stories.js`,
-        `import ${componentName} from '@/components/${componentName}';
+        `${componentName}.stories.tsx`,
+        `import { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import ${componentName} from '@/components/${componentName}';
+
+const meta: Meta<typeof ${componentName}> = {
   title: '${componentName}',
   component: ${componentName},
   tags: ['autodocs'],
 };
+export default meta;
 
-export const Primary = {};
+type Story = StoryObj<typeof ${componentName}>;
+export const Primary: Story = {};
 `,
       ];
     default:

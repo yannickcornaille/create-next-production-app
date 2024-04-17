@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import { cloneElement } from 'react';
-import { render } from '@testing-library/react';
+import { cloneElement, ReactNode, ReactElement } from 'react';
+import { render, RenderOptions } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { createTranslator } from 'use-intl/core';
+import { jest } from '@jest/globals';
 
 import '../app/[locale]/globals.css';
 import { defaultLocale } from '@/i18n/locales';
@@ -13,8 +13,8 @@ const nextIntlConfig = {
   messages,
 };
 
-const AllTheProviders = ({ children }) => {
-  const clonedChildren = cloneElement(children, {
+const AllTheProviders = ({ children }: { children: ReactNode }) => {
+  const clonedChildren = cloneElement(children as ReactElement, {
     params: { locale: nextIntlConfig.locale },
   });
 
@@ -25,19 +25,18 @@ const AllTheProviders = ({ children }) => {
   );
 };
 
-const customRender = (ui, options) =>
+const customRender = (
+  ui: ReactElement,
+  options?: Omit<RenderOptions, 'wrapper'>
+) =>
   render(ui, {
     wrapper: AllTheProviders,
     ...options,
   });
 
-AllTheProviders.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
 // To test a Next.js page component, you have to mock the next-intl `unstable_setRequestLocale` function.
 jest.mock('next-intl/server', () => ({
-  ...jest.requireActual('next-intl/server'),
+  ...(jest.requireActual('next-intl/server') as object),
   unstable_setRequestLocale: () => ({ locale: defaultLocale }),
   getTranslations: () => createTranslator(nextIntlConfig),
 }));
@@ -66,14 +65,16 @@ jest.mock('next-intl/navigation', () => ({
   }),
 }));
 
+// @ts-expect-error: Too difficult to type
 global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
     json: () => Promise.resolve([]),
     formData: () => Promise.resolve({}),
     text: () => Promise.resolve('Test'),
+    blob: () => Promise.resolve([]),
   })
-);
+) as jest.Mock;
 
 // Re-export everything
 export * from '@testing-library/react';
