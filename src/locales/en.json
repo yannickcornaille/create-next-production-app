@@ -3,5 +3,10 @@
     "welcome": "Welcome to production-grade <link>Next.js</link> starter kit!",
     "start": "Get started by editing <code>src/app/page.js</code>"
   },
-  "footer": "Powered by Next.js with the contribution of Yannick Cornaille"
+  "footer": "Powered by Next.js with the contribution of Yannick Cornaille",
+  "notFound": {
+    "title": "Page not found",
+    "text": "Sorry, the page you search is not found or no longer exists.",
+    "backToHome": "Back to home"
+  }
 }

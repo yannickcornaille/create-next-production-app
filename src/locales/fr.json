@@ -3,5 +3,10 @@
     "welcome": "Bienvenue dans le kit de démarrage prêt pour la production <link>Next.js</link>!",
     "start": "Commencez par modifier <code>src/app/page.js</code>"
   },
-  "footer": "Propulsé par Next.js avec la contribution de Yannick Cornaille"
+  "footer": "Propulsé par Next.js avec la contribution de Yannick Cornaille",
+  "notFound": {
+    "title": "Page non trouvée",
+    "text": "Désolé, la page que vous recherchez est introuvable ou n’existe plus.",
+    "backToHome": "Retour à l'accueil"
+  }
 }
