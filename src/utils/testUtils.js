@@ -42,6 +42,39 @@ jest.mock('next-intl/server', () => ({
   getTranslations: () => createTranslator(nextIntlConfig),
 }));
 
+const router = {
+  back: jest.fn(),
+  forward: jest.fn(),
+  refresh: jest.fn(),
+  push: jest.fn(),
+  prefetch: jest.fn(),
+  replace: jest.fn(),
+};
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => router,
+  usePathname: () => '/',
+  useSelectedLayoutSegment: () => ({ locale: nextIntlConfig.locale }),
+}));
+
+jest.mock('next-intl/navigation', () => ({
+  createSharedPathnamesNavigation: () => ({
+    Link: () => null,
+    redirect: () => jest.fn(),
+    usePathname: () => '/',
+    useRouter: () => router,
+  }),
+}));
+
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve([]),
+    formData: () => Promise.resolve({}),
+    text: () => Promise.resolve('Test'),
+  })
+);
+
 // Re-export everything
 export * from '@testing-library/react';
 
