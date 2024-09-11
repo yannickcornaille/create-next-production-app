@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import { cloneElement } from 'react';
 import { render } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
+import { createTranslator } from 'use-intl/core';
 
 import '../app/[locale]/globals.css';
-import { defaultLocale } from '@/utils/locales';
+import { defaultLocale } from '@/i18n/locales';
 import messages from '@/locales/en.json';
 
 const nextIntlConfig = {
@@ -38,6 +39,7 @@ AllTheProviders.propTypes = {
 jest.mock('next-intl/server', () => ({
   ...jest.requireActual('next-intl/server'),
   unstable_setRequestLocale: () => ({ locale: defaultLocale }),
+  getTranslations: () => createTranslator(nextIntlConfig),
 }));
 
 // Re-export everything

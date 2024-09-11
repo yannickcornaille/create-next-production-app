@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 
 import '../src/app/[locale]/globals.css';
-import { locales, defaultLocale } from '@/utils/locales';
+import { locales, defaultLocale } from '@/i18n/locales';
 
 const messages = locales.reduce(
   (acc, locale) => ({

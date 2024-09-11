@@ -6,5 +6,7 @@
   "stylelint.validate": ["css"],
   "editor.formatOnSave": true,
   "jest.jestCommandLine": "npm run test --",
-  "jest.runMode": "on-demand"
+  "jest.runMode": "on-demand",
+  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.keystyle": "nested"
 }

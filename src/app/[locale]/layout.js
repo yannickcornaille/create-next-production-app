@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale, getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
 import './globals.css';
-import { locales } from '@/utils/locales';
+import { routing } from '@/i18n/routing';
 
 export const metadata = {
   metadataBase: new URL('https://create-next-production-app.com'),
@@ -51,20 +52,25 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   minimumScale: 1,
-  themeColor: 'black',
+  themeColor: '#000',
   colorScheme: 'dark light',
 };
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-const RootLayout = ({ children, params: { locale } }) => {
+const RootLayout = async ({ children, params: { locale } }) => {
   unstable_setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
     <html lang={locale} data-theme="dark">
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 };
